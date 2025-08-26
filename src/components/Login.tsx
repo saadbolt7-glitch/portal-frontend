@@ -26,10 +26,10 @@ const Login: React.FC = () => {
   return (
     <div className="min-h-screen flex">
       {/* Left Side - Branded */}
-      <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700">
-        <div className="absolute inset-0 bg-black/30"></div>
+      <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-gradient-to-br from-navy-800 via-navy-700 to-navy-900">
+        <div className="absolute inset-0 bg-navy-900/20"></div>
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-20"
+          className="absolute inset-0 bg-cover bg-center opacity-10"
           style={{
             backgroundImage: `url('https://res.cloudinary.com/drnak5yb2/image/upload/v1754555854/MPFM-SFS-3G-X-1536x1187_qhmxbs.png')`
           }}
@@ -38,29 +38,28 @@ const Login: React.FC = () => {
         <div className="relative z-10 flex flex-col justify-center p-12 text-white">
           <div className="mb-8">
             <h1 className="text-5xl font-bold mb-6 leading-tight">
-              Revolutionary 
-              <span className="block text-yellow-400">Flow Measurement</span>
-              Technology
+              Welcome to
+              <span className="block text-yellow-400">Saher Flow Solutions</span>
+              Portal
             </h1>
             <p className="text-xl text-gray-200 leading-relaxed">
-              Access your dashboard to monitor real-time flow data, manage your systems, 
-              and gain insights that drive operational excellence. Experience the future 
-              of multiphase measurement with precision and reliability you can trust.
+              Access your professional dashboard to monitor real-time flow data, manage your measurement systems, 
+              and gain actionable insights that drive operational excellence in your critical applications.
             </p>
           </div>
 
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+              <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
               <span className="text-gray-300">Real-time monitoring and analytics</span>
             </div>
             <div className="flex items-center gap-3">
-              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-              <span className="text-gray-300">Non-gamma, radiation-free technology</span>
+              <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+              <span className="text-gray-300">Advanced measurement technology</span>
             </div>
             <div className="flex items-center gap-3">
-              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-              <span className="text-gray-300">Industry-leading ±2-5% accuracy</span>
+              <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+              <span className="text-gray-300">Professional-grade precision</span>
             </div>
           </div>
         </div>
@@ -155,7 +154,7 @@ const Login: React.FC = () => {
               </div>
 
               <div className="text-sm">
-                <Link to="/forgot-password" className="font-medium text-yellow-600 hover:text-yellow-500">
+                <Link to="/forgot-password" className="font-medium text-navy-600 hover:text-navy-500">
                   Forgot your password?
                 </Link>
               </div>
@@ -163,7 +162,7 @@ const Login: React.FC = () => {
 
             <button
               type="submit"
-              className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition-all duration-200"
+              className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-gradient-to-r from-navy-600 to-navy-700 hover:from-navy-700 hover:to-navy-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-500 transition-all duration-200"
             >
               Sign in
             </button>
@@ -207,7 +206,7 @@ const Login: React.FC = () => {
 
           <p className="mt-8 text-center text-sm text-gray-600">
             Don't have an account?{' '}
-            <Link to="/signup" className="font-medium text-yellow-600 hover:text-yellow-500">
+            <Link to="/signup" className="font-medium text-navy-600 hover:text-navy-500">
               Sign up for free
             </Link>
           </p>
