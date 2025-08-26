@@ -10,6 +10,7 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gray-50">
+        {/* Navbar will only show on landing page due to conditional rendering in Navbar component */}
         <Navbar />
         <Routes>
           <Route path="/" element={<Landing />} />
