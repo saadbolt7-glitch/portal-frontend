@@ -45,6 +45,15 @@ const Signup: React.FC = () => {
         ></div>
         
         <div className="relative z-10 flex flex-col justify-start pt-20 p-12 text-white">
+          {/* Logo at top left */}
+          <div className="mb-8">
+            <img
+              src="https://saherflow.com/wp-content/uploads/2021/06/Artboard-1-copy100.svg"
+              alt="Saher Flow Solutions"
+              className="h-12 w-auto"
+            />
+          </div>
+          
           <div className="mb-12">
             <h1 className="text-5xl font-bold mb-6 leading-tight">
               <span className="block">Join the Future of</span>
