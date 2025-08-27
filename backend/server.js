@@ -51,20 +51,37 @@ app.use('*', (req, res) => {
 });
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => {
-    console.log('Connected to MongoDB');
+const connectDB = async () => {
+  try {
+    if (!process.env.MONGODB_URI) {
+      throw new Error('MONGODB_URI environment variable is not defined');
+    }
     
+    await mongoose.connect(process.env.MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('Connected to MongoDB');
+  } catch (error) {
+    console.error('MongoDB connection error:', error.message);
+    console.log('\n📋 To fix this error:');
+    console.log('1. Create a MongoDB Atlas account at https://www.mongodb.com/atlas');
+    console.log('2. Create a new cluster');
+    console.log('3. Get your connection string');
+    console.log('4. Update MONGODB_URI in your .env file');
+    console.log('5. Or install MongoDB locally and start the service\n');
+    process.exit(1);
+  }
+};
+
+connectDB()
+  .then(() => {
     // Start server
     const PORT = process.env.PORT || 5000;
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);
       console.log(`Health check: http://localhost:${PORT}/api/health`);
     });
-  })
-  .catch((error) => {
-    console.error('MongoDB connection error:', error);
-    process.exit(1);
   });
 
 module.exports = app;

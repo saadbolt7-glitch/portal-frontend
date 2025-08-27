@@ -25,7 +25,7 @@ A complete authentication backend built with Express.js, MongoDB, and JWT tokens
    Create a `.env` file in the root directory with the following variables:
    ```
    PORT=5000
-   MONGODB_URI=mongodb://localhost:27017/saher-flow-solutions
+   MONGODB_URI=mongodb+srv://your-username:your-password@cluster0.mongodb.net/saher-flow-solutions?retryWrites=true&w=majority
    JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
    JWT_EXPIRE=7d
    EMAIL_HOST=smtp.gmail.com
@@ -35,8 +35,18 @@ A complete authentication backend built with Express.js, MongoDB, and JWT tokens
    CLIENT_URL=http://localhost:5173
    ```
 
-3. **Start MongoDB:**
-   Make sure MongoDB is running on your system.
+3. **Database Setup:**
+   
+   **Option A: MongoDB Atlas (Recommended for development)**
+   1. Create a free account at [MongoDB Atlas](https://www.mongodb.com/atlas)
+   2. Create a new cluster
+   3. Create a database user
+   4. Get your connection string and update `MONGODB_URI` in `.env`
+   
+   **Option B: Local MongoDB**
+   1. Install MongoDB on your system
+   2. Start the MongoDB service
+   3. Use: `MONGODB_URI=mongodb://localhost:27017/saher-flow-solutions`
 
 4. **Run the server:**
    ```bash
