@@ -57,19 +57,16 @@ const connectDB = async () => {
       throw new Error('MONGODB_URI environment variable is not defined');
     }
     
-    await mongoose.connect(process.env.MONGODB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(process.env.MONGODB_URI);
     console.log('Connected to MongoDB');
   } catch (error) {
     console.error('MongoDB connection error:', error.message);
     console.log('\n📋 To fix this error:');
-    console.log('1. Create a MongoDB Atlas account at https://www.mongodb.com/atlas');
-    console.log('2. Create a new cluster');
-    console.log('3. Get your connection string');
-    console.log('4. Update MONGODB_URI in your .env file');
-    console.log('5. Or install MongoDB locally and start the service\n');
+    console.log('1. Make sure you have created a MongoDB Atlas cluster');
+    console.log('2. Created a database user with read/write permissions');
+    console.log('3. Added your IP address to Network Access (or allow all IPs)');
+    console.log('4. Updated MONGODB_URI in your .env file with your connection string');
+    console.log('5. Replaced <password> with your actual database user password\n');
     process.exit(1);
   }
 };
